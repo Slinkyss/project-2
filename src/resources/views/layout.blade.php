@@ -6,18 +6,44 @@
 <meta name="description" content="Tīmekļa Tehnoloģiju 2. praktiskais darbs">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-rel="stylesheet"
-integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+    crossorigin="anonymous"
 >
-</head>
-<body>
-<nav class="navbar bg-primary mb-3" data-bs-theme="yellow">
-<header class="container">
-<a class="navbar-brand" href="#">Project 2 - {{ $title }}</a>
-</header>
+<nav class="navbar navbar-expand-md bg-primary mb-3" data-bs-theme="dark">
+<div class="container">
+<span class="navbar-brand mb-0 h1">Project 2</span>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item">
+@if(Auth::check())
+ <li class="nav-item">
+ <a class="nav-link" href="/authors">Authors</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="/books">Books</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link" href="/logout">Log out</a>
+ </li>
+@else
+ <li class="nav-item">
+ <a class="nav-link" href="/login">Log in</a>
+ </li>
+@endif
+
+</ul>
+</div>
+</div>
 </nav>
+</head>
+
+
 <main class="container">
 <div class="row">
 <div class="col">
@@ -35,5 +61,6 @@ D. Kalnavs, VeA, 2024
 </div>
 </div>
 </footer>
+<script src="/js/admin.js"></script>
 </body>
 </html>
